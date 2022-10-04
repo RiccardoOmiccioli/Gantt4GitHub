@@ -32,9 +32,13 @@
                 $.ajax({
                     url: repoURL + "/issues",
                     type: "GET",
+                    crossDomain: true,
                     success: function (response) {
                         console.log("Response:", response);
-                    }
+                    },
+                    error: function (xhr, status) {
+                    console.log("error: " + JSON.stringify(xhr));
+                }
                 });
             });
         </script>
